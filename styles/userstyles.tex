@@ -25,6 +25,10 @@
 \theoremstyle{definition} \newtheorem{corollary}[theorem]{\scshape Следствие}
 \theoremstyle{definition} \newtheorem{algorithm}{Алгоритм}[section]
 \renewenvironment{proof}{{\scshape Доказательство.}}{\qed}
+\newcommand{\indention}[1]{\vspace{1.5em}\textbf{#1}}
+
+%%% Номера задач включают номер главы
+\renewcommand*{\theenumi}{\thechapter.\arabic{enumi}}
 
 %%% Русская традиция начертания математических знаков
 \renewcommand{\le}{\ensuremath{\leqslant}}
