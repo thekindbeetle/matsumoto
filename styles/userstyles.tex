@@ -1,0 +1,110 @@
+\graphicspath{{images/}}
+
+%%% Мои стили
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\id}{id}
+\renewcommand*\d\partial
+\newcommand*{\bint}{\displaystyle\int}
+\newcommand*{\oprint}[2]{\displaystyle\int\limits_{#1}^{#2}}
+\newcommand*{\smalloprint}[2]{\int\limits_{#1}^{#2}}
+\newcommand*\R{\mathbb{R}}
+\newcommand*\Z{\mathbb{Z}}
+\newcommand*\N{\mathbb{N}}
+\newcommand*\M{\mathbb{M}}
+\newcommand*\Q{\mathbb{Q}}
+\renewcommand*\C{\mathbb{C}}
+\newcommand*\grad\nabla
+
+%%% Новые окружения для определений, теорем и т. д.
+\theoremstyle{definition} \newtheorem{theorem}{\scshape Теорема}[chapter]
+\theoremstyle{definition} \newtheorem{lemma}[theorem]{\scshape Лемма}
+\theoremstyle{definition} \newtheorem{definition}[theorem]{\scshape Определение}
+\theoremstyle{definition} \newtheorem{conjecture}[theorem]{\scshape Утверждение}
+\theoremstyle{definition} \newtheorem{example}[theorem]{\scshape Пример}
+\theoremstyle{definition} \newtheorem{corollary}[theorem]{\scshape Следствие}
+\theoremstyle{definition} \newtheorem{algorithm}{Алгоритм}[section]
+\renewenvironment{proof}{{\scshape Доказательство.}}{\qed}
+
+%%% Русская традиция начертания математических знаков
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+
+%%% Русская традиция начертания математических функций (на случай копирования из зарубежных источников)
+\renewcommand{\tan}{\operatorname{tg}}
+\renewcommand{\cot}{\operatorname{ctg}}
+\renewcommand{\csc}{\operatorname{cosec}}
+
+%%% Русская традиция начертания греческих букв (греческие буквы вертикальные, через пакет upgreek)
+\renewcommand{\epsilon}{\ensuremath{\upvarepsilon}}   %  русская традиция записи
+\renewcommand{\phi}{\ensuremath{\upvarphi}}
+%\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\alpha}{\upalpha}
+\renewcommand{\beta}{\upbeta}
+\renewcommand{\gamma}{\upgamma}
+\renewcommand{\delta}{\updelta}
+\renewcommand{\varepsilon}{\upvarepsilon}
+\renewcommand{\zeta}{\upzeta}
+\renewcommand{\eta}{\upeta}
+\renewcommand{\theta}{\uptheta}
+\renewcommand{\vartheta}{\upvartheta}
+\renewcommand{\iota}{\upiota}
+\renewcommand{\kappa}{\upkappa}
+\renewcommand{\lambda}{\uplambda}
+\renewcommand{\mu}{\upmu}
+\renewcommand{\nu}{\upnu}
+\renewcommand{\xi}{\upxi}
+\renewcommand{\pi}{\uppi}
+\renewcommand{\varpi}{\upvarpi}
+\renewcommand{\rho}{\uprho}
+%\renewcommand{\varrho}{\upvarrho}
+\renewcommand{\sigma}{\upsigma}
+%\renewcommand{\varsigma}{\upvarsigma}
+\renewcommand{\tau}{\uptau}
+\renewcommand{\upsilon}{\upupsilon}
+\renewcommand{\varphi}{\upvarphi}
+\renewcommand{\chi}{\upchi}
+\renewcommand{\psi}{\uppsi}
+\renewcommand{\omega}{\upomega}
+
+\def\slantfrac#1#2{ \hspace{3pt}\!^{#1}\!\!\hspace{1pt}/
+    \hspace{2pt}\!\!_{#2}\!\hspace{3pt}
+} %Макрос для красивых дробей в строчку (например, 1/2)
+
+%%% Заголовки %%%
+\titleformat{\chapter}[display]
+    {\normalfont\Large\filcenter\sffamily}
+    {\titlerule[1pt]%
+    \vspace{1pt}%
+    \titlerule
+    \vspace{1pc}%
+    \Large\MakeUppercase{\chaptertitlename} \thechapter}
+    {1pc}
+    {\titlerule
+    \vspace{1pc}%
+    \Huge}
+
+\titleformat{\section}[block]
+    {\normalfont\Large\filcenter\sffamily}
+    {\Large\thesection.}{0.5em}{}
+    
+%%% Колонтитулы %%%
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{ \markboth{\thechapter.~~\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{ \markright{\thesection.~~\MakeUppercase{#1}}}
+
+\fancyhf{}
+\fancyhead[LE,RO]{{\small\sffamily\thepage}}
+\fancyhead[CE]{{\small\bf\sffamily\leftmark}}
+\fancyhead[CO]{{\small\bf\sffamily\rightmark}}
+
+\fancypagestyle{plain}{ %
+  \fancyhf{} % remove everything
+  \renewcommand{\headrulewidth}{0pt} % remove lines as well
+  \renewcommand{\footrulewidth}{0pt}
+}
